@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.niko.performance.MainActivity">
+
+    <Button
+        android:id="@+id/btnAcelerometro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="37dp"
+        android:text="Acelerometro"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="29dp" />
+
+    <Button
+        android:id="@+id/btnMagnetometro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnGiroscopioSoft"
+        android:layout_alignStart="@+id/btnGiroscopioSoft"
+        android:layout_below="@+id/btnAcelerometro"
+        android:layout_marginTop="36dp"
+        android:text="Magnetometro"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="101dp" />
+
+    <Button
+        android:id="@+id/btnGiroscopioSoft"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnGiroscopioHard"
+        android:layout_alignStart="@+id/btnGiroscopioHard"
+        android:layout_below="@+id/btnMagnetometro"
+        android:layout_marginTop="32dp"
+        android:text="Giroscopio Soft"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="177dp" />
+
+    <Button
+        android:id="@+id/btnGiroscopioHard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnDetener"
+        android:layout_alignStart="@+id/btnDetener"
+        android:layout_below="@+id/btnGiroscopioSoft"
+        android:layout_marginTop="32dp"
+        android:text="Giroscopio Hard"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="276dp" />
+
+    <Button
+        android:id="@+id/btnDetener"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="33dp"
+        android:text="Detener"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="400dp" />
+
+</RelativeLayout>
