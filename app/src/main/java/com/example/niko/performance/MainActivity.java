@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         btnGiroscopioSoft = (Button) findViewById(R.id.btnGiroscopioSoft);
         btnGiroscopioHard = (Button) findViewById(R.id.btnGiroscopioHard);
         btnDetener        = (Button) findViewById(R.id.btnDetener);
+        btnGiroscopioSoft.setEnabled(false);
 
         //obtiene la Mac que fue seleccionada en la actividad "DispositivosBT"
         Intent intent = getIntent() ;
@@ -42,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra(SensorServices.SENSOR_EXTRA, Sensor.STRING_TYPE_ACCELEROMETER);
                 i.putExtra(EXTRA_DEVICE_ADDRESS, address);
                 startService(i);
+
+                btnAcelerometro.setEnabled(false);
+                if (!btnMagnetometro.isEnabled())
+                    btnGiroscopioSoft.setEnabled(true);
             }
         });
 
@@ -52,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra(SensorServices.SENSOR_EXTRA, Sensor.STRING_TYPE_MAGNETIC_FIELD);
                 i.putExtra(EXTRA_DEVICE_ADDRESS, address);
                 startService(i);
+
+                btnMagnetometro.setEnabled(false);
+                if (!btnAcelerometro.isEnabled())
+                    btnGiroscopioSoft.setEnabled(true);
             }
         });
 
@@ -61,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(thisContext, SensorServices.class);
                 i.putExtra(SensorServices.SENSOR_EXTRA, Sensor.STRING_TYPE_GAME_ROTATION_VECTOR);
                 startService(i);
+                btnGiroscopioSoft.setEnabled(false);
             }
         });
 
@@ -71,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra(SensorServices.SENSOR_EXTRA, Sensor.STRING_TYPE_GYROSCOPE);
                 i.putExtra(EXTRA_DEVICE_ADDRESS, address);
                 startService(i);
+                btnGiroscopioHard.setEnabled(false);
             }
         });
 
@@ -78,6 +89,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v)
             {
                 stopService(new Intent(thisContext, SensorServices.class));
+                btnGiroscopioHard.setEnabled(true);
+                btnGiroscopioSoft.setEnabled(true);
+                btnMagnetometro.setEnabled(true);
+                btnAcelerometro.setEnabled(true);
             }
                       });
 

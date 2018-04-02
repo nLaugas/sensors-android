@@ -61,8 +61,8 @@ public class SensorsThread extends Thread implements SensorEventListener, Closea
     public void run() {
         Looper.prepare();
         looper = Looper.myLooper();
-        //regristrar el sensor listner
-        mSensorManager.registerListener(this, mSensor, SensorManager.SENSOR_DELAY_NORMAL);
+            //regristrar el sensor listner
+            mSensorManager.registerListener(this, mSensor, SensorManager.SENSOR_DELAY_NORMAL);
         Looper.loop();
     }
 
