@@ -6,7 +6,6 @@ import android.content.pm.ActivityInfo;
 import android.hardware.Sensor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import static com.example.niko.performance.DispositivosBT.*;
@@ -39,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
         btnAcelerometro .setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
             {
-                Intent i = new Intent(thisContext, SensorServices.class);
-                i.putExtra(SensorServices.SENSOR_EXTRA, Sensor.STRING_TYPE_ACCELEROMETER);
+                Intent i = new Intent(thisContext, FlyControlServices.class);
+                i.putExtra(FlyControlServices.SENSOR_EXTRA, Sensor.STRING_TYPE_ACCELEROMETER);
                 i.putExtra(EXTRA_DEVICE_ADDRESS, address);
                 startService(i);
 
@@ -53,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
         btnMagnetometro .setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
             {
-                Intent i = new Intent(thisContext, SensorServices.class);
-                i.putExtra(SensorServices.SENSOR_EXTRA, Sensor.STRING_TYPE_MAGNETIC_FIELD);
+                Intent i = new Intent(thisContext, FlyControlServices.class);
+                i.putExtra(FlyControlServices.SENSOR_EXTRA, Sensor.STRING_TYPE_MAGNETIC_FIELD);
                 i.putExtra(EXTRA_DEVICE_ADDRESS, address);
                 startService(i);
 
@@ -67,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
         btnGiroscopioSoft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
             {
-                Intent i = new Intent(thisContext, SensorServices.class);
-                i.putExtra(SensorServices.SENSOR_EXTRA, Sensor.STRING_TYPE_GAME_ROTATION_VECTOR);
+                Intent i = new Intent(thisContext, FlyControlServices.class);
+                i.putExtra(FlyControlServices.SENSOR_EXTRA, Sensor.STRING_TYPE_GAME_ROTATION_VECTOR);
                 startService(i);
                 btnGiroscopioSoft.setEnabled(false);
             }
@@ -77,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
         btnGiroscopioHard.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
             {
-                Intent i = new Intent(thisContext, SensorServices.class);
-                i.putExtra(SensorServices.SENSOR_EXTRA, Sensor.STRING_TYPE_GYROSCOPE);
+                Intent i = new Intent(thisContext, FlyControlServices.class);
+                i.putExtra(FlyControlServices.SENSOR_EXTRA, Sensor.STRING_TYPE_GYROSCOPE);
                 i.putExtra(EXTRA_DEVICE_ADDRESS, address);
                 startService(i);
                 btnGiroscopioHard.setEnabled(false);
@@ -88,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         btnDetener.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
             {
-                stopService(new Intent(thisContext, SensorServices.class));
+                stopService(new Intent(thisContext, FlyControlServices.class));
                 btnGiroscopioHard.setEnabled(true);
                 btnGiroscopioSoft.setEnabled(true);
                 btnMagnetometro.setEnabled(true);
