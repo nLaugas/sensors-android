@@ -1,7 +1,7 @@
 SENSORS ANDROID
 
-The app sends sensors' data via bluetooth. The sensors are  gyroscope, accelerometer and magnetometer.
-If gyroscope  sensor is not available in the smartphone, then it is simulate through the use of two sensors. 
+The app sends sensors' data via bluetooth. These sensors are  gyroscope, accelerometer and magnetometer.
+If the gyroscope  sensor is not available in the smartphone, then they are simulated through the use of two sensors. 
 These sensors are magnetometer and accelerometer. 
 
  
